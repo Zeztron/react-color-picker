@@ -23,7 +23,9 @@ class Palette extends Component {
         const { level } = this.state;
         return (
             <div className="Palette">
-                <Slider defaultValue={ level } min={100} max={900} onAfterChange={this.changeLevel} step={100}/>
+                <div className="slider">
+                    <Slider defaultValue={level} min={100} max={900} onAfterChange={this.changeLevel} step={100} />
+                </div>
             {/* Navbar goes here */}
                 <div className="Palette-colors">
                     {colors[level].map(color => (
