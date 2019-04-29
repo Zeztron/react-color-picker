@@ -55,7 +55,7 @@ const styles = {
         lineHeight: "30px",
         textTransform: "uppercase",
         border: "none",
-        textDcoration: "none",
+        textDecoration: "none",
         opacity: "0",
         transition: "0.5s"
     },
