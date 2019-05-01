@@ -17,7 +17,21 @@ export default {
         display: "flex",
         width: "100%",
         justifyContent: 'space-between',
-        color: "#fff"
+        alignItems: "center",
+        color: "#fff",
+        "& a": {
+            color: "#fff",
+            textDecoration: "none",
+            border: "1px solid #fff",
+            borderRadius: "5px",
+            padding: "0.5rem",
+            transition: "all 0.4s",
+            "&:hover": {
+                backgroundColor: "#fff",
+                color: "blue",
+                border: "1px solid blue"
+            }
+        }
     },
     palettes: {
         boxSizing: "border-box",
