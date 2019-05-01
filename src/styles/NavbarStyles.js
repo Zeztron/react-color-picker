@@ -1,4 +1,3 @@
-import chroma from 'chroma-js';
 export default {
   Navbar: {
     display: "flex",
