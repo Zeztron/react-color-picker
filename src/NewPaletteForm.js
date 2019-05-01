@@ -75,8 +75,9 @@ const styles = theme => ({
 
 class NewPaletteForm extends Component {
     state = {
-        open: false,
-        color: 'purple'
+        open: true,
+        currentColor: 'teal',
+        colors: ["purple", "#e15764"]
     };
 
     handleDrawerOpen = () => {
@@ -87,9 +88,21 @@ class NewPaletteForm extends Component {
         this.setState({ open: false });
     };
 
+    updateCurrentColor = (newColor) => {
+        this.setState({
+            currentColor: newColor.hex
+        })
+    }
+
+    addNewColor = () => {
+        this.setState({
+            colors: [...this.state.colors, this.state.currentColor]
+        })
+    }
+
     render() {
         const { classes } = this.props;
-        const { open, color } = this.state;
+        const { open, currentColor } = this.state;
 
         return (
         <div className={classes.root}>
@@ -137,10 +150,17 @@ class NewPaletteForm extends Component {
                     <Button variant="contained" color="primary">Random Color</Button>
                 </div>
                 <ChromePicker 
-                    color={color}
-                    onChangeComplete={newColor => console.log(newColor)}
+                    color={currentColor}
+                    onChangeComplete={newColor => this.updateCurrentColor(newColor)}
                 />
-                <Button variant="contained" color="secondary">Add Color</Button>
+                <Button 
+                    variant="contained" 
+                    color="secondary"
+                    style={{ backgroundColor: currentColor }}
+                    onClick={this.addNewColor}
+                >
+                    Add Color
+                </Button>
             </Drawer>
             <main
                 className={classNames(classes.content, {
@@ -148,6 +168,16 @@ class NewPaletteForm extends Component {
                 })}
             >
                 <div className={classes.drawerHeader} />
+                <ul>
+                    {this.state.colors.map(color => (
+                        <li 
+                            key={color} 
+                            style={{ backgroundColor: color }}
+                        >
+                            {color}
+                        </li>
+                    ))}
+                </ul>
             </main>
         </div>
         );
