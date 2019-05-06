@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
@@ -223,6 +224,14 @@ class NewPaletteForm extends Component {
                         >
                             Save Palette
                         </Button>
+                        <Link to="/">
+                            <Button
+                                variant="contained"
+                                color="secondary"
+                            >
+                                Go Back
+                            </Button>
+                        </Link>
                     </ValidatorForm>
                 </Toolbar>
             </AppBar>
