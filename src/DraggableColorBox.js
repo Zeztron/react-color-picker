@@ -31,6 +31,7 @@ const style = {
         textTransform: "uppercase",
         fontSize: "12px",
         display: "flex",
+        justifyContent: "space-between"
     },
     deleteIcon: {
         transition: "all 0.3s ease-in-out"
