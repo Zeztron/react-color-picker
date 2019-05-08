@@ -18,9 +18,6 @@ export default {
         borderRadius: '5px',
         overflow: 'hidden'
     },
-    delete: {
-
-    },
     deleteIcon: {
         color: '#fff',
         backgroundColor: '#eb3d30',
