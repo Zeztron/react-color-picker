@@ -63,7 +63,7 @@ class PaletteList extends Component {
                                 <MiniPalette 
                                     key={palette.id} 
                                     {...palette} 
-                                    handleClick={() => this.goToPalette(palette.id)}
+                                    handleClick={() => this.goToPalette}
                                     openDialog={this.openDialog}
                                     // handleDelete={deletePalette}
                                     id={palette.id}
